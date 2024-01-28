@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package user;
+option go_package="../pb";
+
+message RandSentenceReq{
+
+}
+
+message RandSentenceResp {
+  int64  id=1;
+  string  content=2;
+  string author=3;
+}
+
+message RandErrorReq{
+  bool boom=1;
+}
+message RandErrorResp{
+  int64  id=1;
+  string  content=2;
+  string author=3;
+}
+
+service User {
+  rpc RandSentence(RandSentenceReq) returns (RandSentenceResp);
+  rpc RandError(RandErrorReq) returns (RandErrorResp);
+}

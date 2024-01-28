@@ -1,0 +1,16 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:1001
+#Etcd:
+#  Hosts:
+#  - 127.0.0.1:2379
+#  Key: user.rpc
+Telemetry:
+  Name: trace-example
+  Endpoint: xxx.cn-hangzhou.log.aliyuncs.com
+  Batcher: otlphttp
+  OtlpHeaders:
+    x-sls-otel-project: 'xxx'
+    x-sls-otel-instance-id: 'x'
+    x-sls-otel-ak-id: 'xxx'
+    x-sls-otel-ak-secret: 'xxxx'
+  OtlpHttpPath: /opentelemetry/v1/traces
